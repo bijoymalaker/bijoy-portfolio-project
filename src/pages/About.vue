@@ -35,70 +35,21 @@
 
             <ul class="service-list">
 
-                <li class="service-item">
+                <li class="service-item" v-for="item in serviceItem" key="item.id">
 
                     <div class="service-icon-box">
-                        <img src="./assets/images/icon-design.svg
-        " alt="design icon" width="40">
+                        <img :src="item.img" :alt="item.name" width="40">
                     </div>
 
                     <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Web design</h4>
+                        <h4 class="h4 service-item-title">{{ item.name }}</h4>
 
                         <p class="service-item-text">
-                            The most modern and high-quality design made at a professional level.
+                            {{ item.description }}
                         </p>
                     </div>
 
-                </li>
-
-                <li class="service-item">
-
-                    <div class="service-icon-box">
-                        <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-                    </div>
-
-                    <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Web development</h4>
-
-                        <p class="service-item-text">
-                            High-quality development of sites at the professional level using PHP, Laravel.
-                        </p>
-                    </div>
-
-                </li>
-
-                <li class="service-item">
-
-                    <div class="service-icon-box">
-                        <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-                    </div>
-
-                    <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Frontend development</h4>
-
-                        <p class="service-item-text">
-                            Professional development of applications for Website using ReactJs, Vue3js.
-                        </p>
-                    </div>
-
-                </li>
-
-                <li class="service-item">
-
-                    <div class="service-icon-box">
-                        <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
-                    </div>
-
-                    <div class="service-content-box">
-                        <h4 class="h4 service-item-title">Photography</h4>
-
-                        <p class="service-item-text">
-                            I make high-quality photos of any category at a professional level.
-                        </p>
-                    </div>
-
-                </li>
+                </li>       
 
             </ul>
 
@@ -115,38 +66,18 @@
 
             <ul class="testimonials-list has-scrollbar">
 
-                <li class="testimonials-item">
+                <li class="testimonials-item" v-for="project in projects" key="project.name">
                     <div class="content-card" data-testimonials-item>
 
                         <!-- <figure class="testimonials-avatar-box">
           <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
         </figure> -->
 
-                        <a href="https://rhythmgroupbd.com/" class="h4 testimonials-item-title"
-                            data-testimonials-title><b>Rhythm Group BD</b></a>
+                        <a :href="project.link" class="h4 testimonials-item-title"
+                            data-testimonials-title><b>{{ project.name }}</b></a>
 
                         <div class="testimonials-text" data-testimonials-text>
-                            <p>
-                                I worked in this project as frontend developer.
-                            </p>
-                        </div>
-
-                    </div>
-                </li>
-
-                <li class="testimonials-item">
-                    <div class="content-card" data-testimonials-item>
-
-                        <!-- <figure class="testimonials-avatar-box">
-          <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-        </figure> -->
-
-                        <a href="#" class="h4 testimonials-item-title" data-testimonials-title><b>1Point6D</b></a>
-
-                        <div class="testimonials-text" data-testimonials-text>
-                            <p>
-                                I was a frontend developer of this site.
-                            </p>
+                            <p> {{ project.des }} </p>
                         </div>
 
                     </div>
@@ -257,7 +188,61 @@
     </article>
 </template>
 <script>
+
+import icondesign from "../assets/images/icondesign.svg";
+import iconapp from "../assets/images/iconapp.svg";
+import icondev from "../assets/images/icondev.svg";
+import iconphoto from "../assets/images/iconphoto.svg";
+
+
+
 export default {
+   name: 'About',
+   data() {
+      return {
+         serviceItem:[
+            {
+                id: 1,
+                name: 'Web design',
+                description: 'The most modern and high-quality design made at a professional level.',
+                img : icondesign,
+            },
+            {
+                id: 2,
+                name: 'Web development',
+                description: 'High-quality development of sites at the professional level using PHP, Laravel.',
+                img : icondev,
+            },
+            {
+                id: 3,
+                name: 'Frontend development',
+                description: 'Professional development of applications for Website using ReactJs, Vue3js.',
+                img : iconapp,
+            },
+            {
+                id: 4,
+                name: 'Photography',
+                description: ' I make high-quality photos of any category at a professional level.',
+                img : iconphoto,
+            },
+         ],
+
+         projects: [
+            {
+                name: 'Rhythm Group BD',
+                des: 'I worked in this project as frontend developer.',
+                link: 'https://rhythmgroupbd.com/'
+            },
+            {
+                name: '1Point6D',
+                des: 'I was a frontend developer of this site.',
+                link: '#'
+            },
+         ]
+
+         
+      }
+   }
 
 }
 </script>
