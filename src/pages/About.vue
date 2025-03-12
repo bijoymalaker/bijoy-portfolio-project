@@ -69,10 +69,6 @@
                 <li class="testimonials-item" v-for="project in projects" key="project.name">
                     <div class="content-card" data-testimonials-item>
 
-                        <!-- <figure class="testimonials-avatar-box">
-          <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-        </figure> -->
-
                         <a :href="project.link" class="h4 testimonials-item-title"
                             data-testimonials-title><b>{{ project.name }}</b></a>
 
@@ -88,9 +84,6 @@
         </section>
 
 
-        <!--
-  - testimonials modal
--->
 
         <div class="modal-container" data-modal-container>
 
@@ -133,57 +126,6 @@
             </section>
 
         </div>
-
-
-        <!--
-  - clients
--->
-
-        <!-- <section class="clients">
-
-  <h3 class="h3 clients-title">Clients</h3>
-
-  <ul class="clients-list has-scrollbar">
-
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-1-color.png" alt="client logo">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-2-color.png" alt="client logo">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-3-color.png" alt="client logo">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-4-color.png" alt="client logo">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-5-color.png" alt="client logo">
-      </a>
-    </li>
-
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-6-color.png" alt="client logo">
-      </a>
-    </li>
-
-  </ul>
-
-</section> -->
 
     </article>
 </template>
