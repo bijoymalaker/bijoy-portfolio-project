@@ -8,7 +8,7 @@
 
             <div class="title-wrapper">
                 <div class="icon-box">
-                    <ion-icon name="book-outline"></ion-icon>
+                    <font-awesome-icon icon="fa-solid fa-user-graduate" />
                 </div>
 
                 <h3 class="h3">Education</h3>
@@ -60,7 +60,7 @@
 
             <div class="title-wrapper">
                 <div class="icon-box">
-                    <ion-icon name="book-outline"></ion-icon>
+                    <font-awesome-icon icon="fa-solid fa-book-bookmark" />
                 </div>
 
                 <h3 class="h3">Experience</h3>

@@ -39,6 +39,7 @@
 
             <figure class="project-img">
               <div class="project-item-icon-box">
+                <font-awesome-icon icon="fa-regular fa-eye" />
                 <ion-icon name="eye-outline"></ion-icon>
               </div>
 

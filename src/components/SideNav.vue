@@ -4,7 +4,7 @@
             <div class="sidebar-info">
 
                 <figure class="avatar-box">
-                    <img src="../assets/images/myPic.jpg" alt="Richard hanrick" width="80">
+                    <img src="../assets/images/myPic.jpg" alt="Bijoy Malaker" width="80">
                 </figure>
 
                 <div class="info-content">
@@ -30,7 +30,7 @@
                     <li class="contact-item">
 
                         <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
+                            <font-awesome-icon icon="fa-regular fa-envelope" />
                         </div>
 
                         <div class="contact-info">
@@ -44,7 +44,7 @@
                     <li class="contact-item">
 
                         <div class="icon-box">
-                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                            <font-awesome-icon icon="fa-solid fa-phone" />
                         </div>
 
                         <div class="contact-info">
@@ -58,7 +58,7 @@
                     <li class="contact-item">
 
                         <div class="icon-box">
-                            <ion-icon name="calendar-outline"></ion-icon>
+                            <font-awesome-icon icon="fa-solid fa-cake-candles" />
                         </div>
 
                         <div class="contact-info">
@@ -72,7 +72,7 @@
                     <li class="contact-item">
 
                         <div class="icon-box">
-                            <ion-icon name="location-outline"></ion-icon>
+                            <font-awesome-icon icon="fa-solid fa-location-dot" />
                         </div>
 
                         <div class="contact-info">
