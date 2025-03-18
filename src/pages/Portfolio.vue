@@ -10,30 +10,25 @@
 
         <li class="filter-item" v-for="(category, index) in Categories" :key="index">
           <button :class="{ active: category === selectedCategory }" @click="selectedCategory = category">{{ category
-            }}</button>
+          }}</button>
         </li>
 
       </ul>
 
-      <div class="filter-select-box">
+      <div class="filter-select-box" @click="toggleDropdown">
 
-        <button class="filter-select" data-select>
 
-          <div class="select-value" data-selecct-value>Select category</div>
 
-          <div class="select-icon">
-            <ion-icon name="chevron-down"></ion-icon>
-          </div>
-
-        </button>
-
-        <ul class="select-list">
-
-          <li class="select-item" v-for="(category, index) in Categories" :key="index">
-            <button :class="{ active: category === selectedCategory }">{{ category }}</button>
+        <ul v-if="dropdownOpen" class="dropdown-menu dropdown filter-select">
+          <li class="dropdown-item" v-for="(category, index) in Categories" :key="index">
+            <button class="filter-select">
+              <div class="select-value">{{ selectedCategory }}</div>
+              <div class="select-icon">
+                <ion-icon :name="dropdownOpen ? 'chevron-up' : 'chevron-down'"></ion-icon>
+              </div>
+            </button>
+            <button @click.stop="selectCategory(category)" class="dropdown-button">{{ category }}</button>
           </li>
-
-
         </ul>
 
       </div>
@@ -82,6 +77,7 @@ export default {
   data() {
     return {
       selectedCategory: "All",
+      dropdownOpen: false,
       Categories: ["All", "Web Development", "Web Design", "Applications"],
       Projects: [
         {
@@ -127,8 +123,17 @@ export default {
       if (this.selectedCategory === "All") {
         return this.Projects;
       } else {
-        return this.Projects.filter(item => item.category === this.selectedCategory);
+        return this.Projects.filter(project => project.category === this.selectedCategory);
       }
+    }
+  },
+  methods: {
+    toggleDropdown() {
+      this.dropdownOpen = !this.dropdownOpen;
+    },
+    selectCategory(category) {
+      this.selectedCategory = category;
+      this.dropdownOpen = false;
     }
   }
 }
