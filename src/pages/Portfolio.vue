@@ -35,7 +35,7 @@
       <ul class="project-list">
 
         <li class="project-item active" v-for="project in filterProject" :key="project.id">
-          <a :href="project.link">
+          <a :href="project.link" target="_blank">
 
             <figure class="project-img">
               <div class="project-item-icon-box">
