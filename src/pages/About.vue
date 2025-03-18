@@ -24,10 +24,7 @@
             </p>
         </section>
 
-
-        <!--
-  - service
--->
+        <!-- Service part  -->
 
         <section class="service">
 

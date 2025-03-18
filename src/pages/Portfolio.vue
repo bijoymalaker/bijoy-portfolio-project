@@ -17,17 +17,16 @@
 
       <div class="filter-select-box" @click="toggleDropdown">
 
+        <button class="filter-select">
+          <div class="select-value">{{ selectedCategory }}</div>
+          <div class="select-icon">
+            <ion-icon :name="dropdownOpen ? 'chevron-up' : 'chevron-down'"></ion-icon>
+          </div>
+        </button>
 
-
-        <ul v-if="dropdownOpen" class="dropdown-menu dropdown filter-select">
+        <ul v-if="dropdownOpen" class="dropdown-menu dropdown">
           <li class="dropdown-item" v-for="(category, index) in Categories" :key="index">
-            <button class="filter-select">
-              <div class="select-value">{{ selectedCategory }}</div>
-              <div class="select-icon">
-                <ion-icon :name="dropdownOpen ? 'chevron-up' : 'chevron-down'"></ion-icon>
-              </div>
-            </button>
-            <button @click.stop="selectCategory(category)" class="dropdown-button">{{ category }}</button>
+            <button @click.stop="selectCategory(category)" class="dropdown-button filter-select" style="margin: 3px 20px;">{{ category }}</button>
           </li>
         </ul>
 
