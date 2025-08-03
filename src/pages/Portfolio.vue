@@ -78,7 +78,7 @@ export default {
     return {
       selectedCategory: "All",
       dropdownOpen: false,
-      Categories: ["All", "Web Development", "Web Design", "Applications"],
+      Categories: ["All", "Web Development", "Web Design", "Applications","Shopify"],
       Projects: [
         {
           id: 1,
@@ -109,12 +109,42 @@ export default {
           link: "https://bijoymalaker.github.io/project_burger/"
         },
         {
-          id: 4,
+          id: 5,
           title: "Simple Project",
           category: "Web Design",
           img: project5,
           link: "#"
         },
+        {
+          id: 6,
+          title: "All things party 1st",
+          category: "Shopify",
+          img: project5,
+          link: "https://allthingsparty1st.com/"
+        },
+        {
+          id: 7,
+          title: "Store Design",
+          category: "Shopify",
+          img: project5,
+          link: "https://wanderlightly.com/"
+        },
+        {
+          id: 8,
+          title: "Wix to Shopify Design",
+          category: "Shopify",
+          img: project5,
+          link: "https://wetx0u-vx.myshopify.com"
+        },
+        {
+          id: 9,
+          title: "Shopify Store Design",
+          category: "Shopify",
+          img: project5,
+          link: "https://4dbzdd-e8.myshopify.com/"
+        },
+
+
       ]
     }
   },
