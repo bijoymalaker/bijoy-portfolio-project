@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { faPhone, faCakeCandles, faLocationDot, faUserGraduate, faBookBookmark, faChevronDown } from '@fortawesome/free-solid-svg-icons'
-import {  } from '@fortawesome/free-brands-svg-icons'
+// import {  } from '@fortawesome/free-brands-svg-icons'
 import { faEye, faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 
