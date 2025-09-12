@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Rhythm Group BD",
+        "des": "I worked in this project as frontend developer.",
+        "link": "https://rhythmgroupbd.com/"
+    },
+    {
+        "name": "1Point6D",
+        "des": "I was a frontend developer of this site.",
+        "link": "#"
+    },
+    {
+        "name": "Portfolio",
+        "des": "This is my personal portfolio website. I built it using ReactJS and TailwindCSS.",
+        "link": "#"
+    },
+    {
+        "name": "Pretty Picks",
+        "des": "This is a simple e-commerce website built with ReactJS and TailwindCSS.",
+        "link": "#"
+    },
+    {
+        "name": "QuickBite",
+        "des": "A simple to-do application built with ReactJS.",
+        "link": "#"
+    }
+]
