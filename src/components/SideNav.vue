@@ -1,5 +1,5 @@
 <template>
-    <aside class="sidebar" data-sidebar>
+    <aside class="sidebar" :class="{ active: isActive }" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
           <img src="../assets/images/myPic.jpg" alt="Bijoy Malaker" width="80">
@@ -16,7 +16,7 @@
         </button>
       </div>
   
-      <div class="sidebar-info_more" :class="{ 'show': isInfoVisible }">
+      <div class="sidebar-info_more" :class="{ 'show': isActive }">
         <div class="separator"></div>
   
         <ul class="contacts-list">
@@ -100,42 +100,22 @@
   
   <script>
   import { ref } from 'vue';
-  
+
   export default {
     setup() {
-      const isInfoVisible = ref(false);
-  
+      const isActive = ref(false);
+
       const toggleInfo = () => {
-        isInfoVisible.value = !isInfoVisible.value;
+        isActive.value = !isActive.value;
       };
-  
+
       return {
-        isInfoVisible,
+        isActive,
         toggleInfo
       };
     }
   };
   </script>
   
-  <style scoped>
-  /* Hide sidebar-info_more by default on small screens */
-  .sidebar-info_more {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
-  
-  /* Show when 'show' class is added */
-  .sidebar-info_more.show {
-    max-height: 500px; /* Adjust height as needed */
-  }
-  
-  /* Keep visible on larger screens */
-  @media (min-width: 768px) {
-    .sidebar-info_more {
-      max-height: none !important;
-      overflow: visible;
-    }
-  }
-  </style>
+
   

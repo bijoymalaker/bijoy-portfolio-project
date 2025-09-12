@@ -85,63 +85,48 @@
        
     </article>
 </template>
-<script>
-
+<script setup>
+import { ref } from 'vue'
 import icondesign from "../assets/images/icondesign.svg";
 import iconapp from "../assets/images/iconapp.svg";
 import icondev from "../assets/images/icondev.svg";
 import iconphoto from "../assets/images/iconphoto.svg";
+import axios from 'axios';
+
+const serviceItem = ref([
+   {
+       id: 1,
+       name: 'Web design',
+       description: 'The most modern and high-quality design made at a professional level.',
+       img : icondesign,
+   },
+   {
+       id: 2,
+       name: 'Web development',
+       description: 'High-quality development of sites at the professional level using PHP, Laravel.',
+       img : icondev,
+   },
+   {
+       id: 3,
+       name: 'Frontend development',
+       description: 'Professional development of applications for Website using ReactJs, Vue3js.',
+       img : iconapp,
+   },
+   {
+       id: 4,
+       name: 'Photography',
+       description: ' I make high-quality photos of any category at a professional level.',
+       img : iconphoto,
+   },
+])
+
+const projects = ref([]);
+
+axios.get('/src/assets/json/Projects.json')
+.then(response => {
+    projects.value = response.data;
+})
 
 
-
-export default {
-   name: 'About',
-   data() {
-      return {
-         serviceItem:[
-            {
-                id: 1,
-                name: 'Web design',
-                description: 'The most modern and high-quality design made at a professional level.',
-                img : icondesign,
-            },
-            {
-                id: 2,
-                name: 'Web development',
-                description: 'High-quality development of sites at the professional level using PHP, Laravel.',
-                img : icondev,
-            },
-            {
-                id: 3,
-                name: 'Frontend development',
-                description: 'Professional development of applications for Website using ReactJs, Vue3js.',
-                img : iconapp,
-            },
-            {
-                id: 4,
-                name: 'Photography',
-                description: ' I make high-quality photos of any category at a professional level.',
-                img : iconphoto,
-            },
-         ],
-
-         projects: [
-            {
-                name: 'Rhythm Group BD',
-                des: 'I worked in this project as frontend developer.',
-                link: 'https://rhythmgroupbd.com/'
-            },
-            {
-                name: '1Point6D',
-                des: 'I was a frontend developer of this site.',
-                link: '#'
-            },
-         ]
-
-         
-      }
-   }
-
-}
 </script>
 <style></style>

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar">
+    <nav class="navbar justify-content-around" data-navbar>
 
         <ul class="navbar-list">
 
@@ -32,4 +32,6 @@ export default {
 
 }
 </script>
-<style scoped></style>
+<style scoped>
+
+</style>

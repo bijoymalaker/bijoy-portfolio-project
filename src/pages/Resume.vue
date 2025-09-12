@@ -112,7 +112,7 @@
                 <li class="skills-item">
 
                     <div class="title-wrapper">
-                        <h5 class="h5">Vue3js & ReactJs</h5>
+                        <h5 class="h5">Vue3js</h5>
                         <data value="80">80%</data>
                     </div>
 
@@ -139,11 +139,11 @@
 
                     <div class="title-wrapper">
                         <h5 class="h5">PHP & Laravel</h5>
-                        <data value="50">50%</data>
+                        <data value="50">70%</data>
                     </div>
 
                     <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 50%;"></div>
+                        <div class="skill-progress-fill" style="width: 70%;"></div>
                     </div>
 
                 </li>
