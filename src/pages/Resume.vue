@@ -109,66 +109,15 @@
 
             <ul class="skills-list content-card">
 
-                <li class="skills-item">
+                <li class="skills-item" v-for="(skillSet,index) in skills" :key="index">
 
                     <div class="title-wrapper">
-                        <h5 class="h5">Vue3js</h5>
-                        <data value="80">80%</data>
+                        <h5 class="h5">{{ skillSet.name }}</h5>
+                        <data :value="skillSet.value">{{ skillSet.value }}%</data>
                     </div>
 
                     <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 80%;"></div>
-                    </div>
-
-                </li>
-
-                <li class="skills-item">
-
-                    <div class="title-wrapper">
-                        <h5 class="h5">HTML5, CSS3 & JavaScript</h5>
-                        <data value="80">80%</data>
-                    </div>
-
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 80%;"></div>
-                    </div>
-
-                </li>
-
-                <li class="skills-item">
-
-                    <div class="title-wrapper">
-                        <h5 class="h5">PHP & Laravel</h5>
-                        <data value="50">70%</data>
-                    </div>
-
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 70%;"></div>
-                    </div>
-
-                </li>
-
-                <li class="skills-item">
-
-                    <div class="title-wrapper">
-                        <h5 class="h5">WordPress</h5>
-                        <data value="70">70%</data>
-                    </div>
-
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 70%;"></div>
-                    </div>
-
-                </li>
-                <li class="skills-item">
-
-                    <div class="title-wrapper">
-                        <h5 class="h5">Graphic design</h5>
-                        <data value="70">70%</data>
-                    </div>
-
-                    <div class="skill-progress-bg">
-                        <div class="skill-progress-fill" style="width: 70%;"></div>
+                        <div class="skill-progress-fill" :style="{ width: skillSet.value + '%' }"></div>
                     </div>
 
                 </li>
@@ -179,9 +128,18 @@
 
     </article>
 </template>
-<script>
-export default {
+<script setup>
+import { ref } from 'vue';
+import axios from 'axios';
 
-}
+const skills = ref([]);
+
+axios.get('/src/assets/json/Skills.json')
+    .then(response =>{
+        skills.value = response.data;
+    })
+
+
+
 </script>
 <style></style>

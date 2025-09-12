@@ -60,112 +60,40 @@
 
   </article>
 </template>
-<script>
+<script setup>
+import { ref, computed } from 'vue'
+import axios from 'axios';
 
-import project1 from "../assets/images/project1.jpg"
-import project2 from "../assets/images/project2.jpg"
-import project3 from "../assets/images/project3.jpg"
-import project4 from "../assets/images/project4.jpg"
-import project5 from "../assets/images/project5.jpg"
+const selectedCategory = ref("All")
+const dropdownOpen = ref(false)
+const Projects = ref([]);
 
+const Categories = computed(() => {
+  const cats = Projects.value.map(p => p.category);
+  const unique = [...new Set(cats)];
+  return ["All", ...unique];
+});
 
+axios.get('/assets/json/Porfolio.json')
+    .then(response => {
+        Projects.value = response.data
+        });
 
-export default {
-
-
-  name: 'Portfolio',
-  data() {
-    return {
-      selectedCategory: "All",
-      dropdownOpen: false,
-      Categories: ["All", "Web Development", "Web Design", "Applications","Shopify"],
-      Projects: [
-        {
-          id: 1,
-          title: "QuickBite",
-          category: "Web Development",
-          img: project1,
-          link: "https://quicckbitee.netlify.app/"
-        },
-        {
-          id: 2,
-          title: "Pretty Picks",
-          category: "Web Development",
-          img: project2,
-          link: "https://prettypicks.netlify.app/"
-        },
-        {
-          id: 3,
-          title: "Doin Website",
-          category: "Web Design",
-          img: project3,
-          link: "https://bijoymalaker.github.io/doin-website/"
-        },
-        {
-          id: 4,
-          title: "Project Burger",
-          category: "Applications",
-          img: project4,
-          link: "https://bijoymalaker.github.io/project_burger/"
-        },
-        {
-          id: 5,
-          title: "Simple Project",
-          category: "Web Design",
-          img: project5,
-          link: "#"
-        },
-        {
-          id: 6,
-          title: "All things party 1st",
-          category: "Shopify",
-          img: project5,
-          link: "https://allthingsparty1st.com/"
-        },
-        {
-          id: 7,
-          title: "Store Design",
-          category: "Shopify",
-          img: project5,
-          link: "https://wanderlightly.com/"
-        },
-        {
-          id: 8,
-          title: "Wix to Shopify Design",
-          category: "Shopify",
-          img: project5,
-          link: "https://wetx0u-vx.myshopify.com"
-        },
-        {
-          id: 9,
-          title: "Shopify Store Design",
-          category: "Shopify",
-          img: project5,
-          link: "https://4dbzdd-e8.myshopify.com/"
-        },
-
-
-      ]
-    }
-  },
-  computed: {
-    filterProject() {
-      if (this.selectedCategory === "All") {
-        return this.Projects;
-      } else {
-        return this.Projects.filter(project => project.category === this.selectedCategory);
-      }
-    }
-  },
-  methods: {
-    toggleDropdown() {
-      this.dropdownOpen = !this.dropdownOpen;
-    },
-    selectCategory(category) {
-      this.selectedCategory = category;
-      this.dropdownOpen = false;
-    }
+const filterProject = computed(() => {
+  if (selectedCategory.value === "All") {
+    return Projects.value;
+  } else {
+    return Projects.value.filter(project => project.category === selectedCategory.value);
   }
+})
+
+function toggleDropdown() {
+  dropdownOpen.value = !dropdownOpen.value;
+}
+
+function selectCategory(category) {
+  selectedCategory.value = category;
+  dropdownOpen.value = false;
 }
 </script>
 <style></style>
