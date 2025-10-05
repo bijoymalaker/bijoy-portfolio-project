@@ -53,9 +53,7 @@
         </section>
 
 
-        <!--
-  - Projects
--->
+        <!--- Projects-->
 
         <section class="testimonials">
 
@@ -67,7 +65,7 @@
                     <div class="content-card" data-testimonials-item>
 
                         <a :href="project.link" class="h4 testimonials-item-title"
-                            data-testimonials-title><b>{{ project.name }}</b></a>
+                            data-testimonials-title target="_blank"><b>{{ project.name }}</b></a>
 
                         <div class="testimonials-text" data-testimonials-text>
                             <p> {{ project.des }} </p>

@@ -69,11 +69,20 @@
             <ol class="timeline-list">
 
                 <li class="timeline-item">
+                    <h4 class="h4 timeline-item-title">Junior Web Developer</h4>
+                    <span>April 2025 - Continuous</span>
+                    <p class="timeline-text">
+                        <b>SM Technology</b> <br>
+                        <b>Area of Expertise:</b>
+                        HTML5 & CSS3, Shopify Theme Development, Liquid<br>
 
+                        <b>Duties/Responsibilities:</b>
+                        Designed and maintained Shopify stores using custom Liquid templates and theme modifications.
+                    </p>
+                </li>
+                <li class="timeline-item">
                     <h4 class="h4 timeline-item-title">Junior Front-end Developer</h4>
-
                     <span>2024</span>
-
                     <p class="timeline-text">
                         <b>DevsStation</b> <br>
                         <b>Area of Expertise:</b>
@@ -82,7 +91,6 @@
                         <b>Duties/Responsibilities:</b>
                         I was working here as a remote part-time junior front-end developer.
                     </p>
-
                 </li>
 
                 <li class="timeline-item">
